@@ -34,7 +34,7 @@ function Feed() {
 
       {loading ? (
         <Text fontSize={16} mt={15}>
-          Loading posts...
+          Cargando publicaciones...
         </Text>
       ) : (
         posts.map(post => (
