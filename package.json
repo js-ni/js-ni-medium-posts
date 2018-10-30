@@ -1,10 +1,14 @@
 {
-  "name": "js-ni-medium-posts",
+  "name": "@js-ni/medium-posts",
   "version": "0.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "umd:main": "dist/index.umd.js",
+  "module": "dist/index.es.js",
+  "source": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "microbundle --jsx React.createElement",
+    "start": "microbundle watch --jsx React.createElement"
   },
   "repository": {
     "type": "git",
@@ -15,5 +19,17 @@
   "bugs": {
     "url": "https://github.com/js-ni/js-ni-medium-posts/issues"
   },
-  "homepage": "https://github.com/js-ni/js-ni-medium-posts#readme"
+  "homepage": "https://github.com/js-ni/js-ni-medium-posts#readme",
+  "dependencies": {
+    "ky": "0.4.1",
+    "rebass": "3.0.0-9"
+  },
+  "devDependencies": {
+    "microbundle": "0.7.0"
+  },
+  "peerDependencies": {
+    "react": "^16.7.0-alpha.0",
+    "react-dom": "^16.7.0-alpha.0",
+    "styled-components": "^4.0.2"
+  }
 }
