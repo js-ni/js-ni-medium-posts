@@ -1,6 +1,6 @@
 {
   "name": "@js-ni/medium-posts",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "",
   "main": "dist/index.js",
   "umd:main": "dist/index.umd.js",
