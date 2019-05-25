@@ -1,21 +1,20 @@
 import React from 'react';
-import {Card, Heading, Link, Text} from 'rebass';
+import {Box, Heading, Text} from '@nerdify/styled-system-primitives';
 
-function Article(props) {
+function Article({article}) {
   return (
-    <Card
+    <Box
       as="article"
       bg="white"
-      borderRadius={4}
-      boxShadow="0px 4px 6px rgba(0, 0, 0, 0.1)"
       p={20}
+      style={{borderRadius: 4, boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)'}}
     >
-      <Link color="#222" href={props.url}>
-        <Heading as="h3" children={props.title} fontWeight="normal" mb="4px" />
-      </Link>
-      <Text as="time" color="#aaa" children={props.createdAt} />
-      <Text children={props.subtitle} color="#888" mt={16} />
-    </Card>
+      <Text as="a" color="#222" href={article.url}>
+        <Heading as="h3" children={article.title} fontSize={24} mb="4px" />
+      </Text>
+      <Text as="time" color="#aaa" children={article.createdAt} />
+      <Text children={article.subtitle} color="#888" mt={16} />
+    </Box>
   );
 }
 

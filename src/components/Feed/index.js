@@ -1,26 +1,28 @@
 import ky from 'ky';
 import React, {useEffect, useState} from 'react';
-import {Box, Flex, Heading, Text} from 'rebass';
+import {Box, Heading, Text} from '@nerdify/styled-system-primitives';
 
 import Article from '../Article';
 
-let API_ENDPOINT = 'https://js-ni-blog-api.herokuapp.com';
+const API_ENDPOINT = 'https://js-ni-blog-api.herokuapp.com';
 
 function Feed() {
-  let [loading, setLoading] = useState(true);
-  let [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [posts, setPosts] = useState([]);
 
-  useEffect(async () => {
-    let data = await ky(API_ENDPOINT).json();
-
-    setPosts(data);
-    setLoading(false);
+  useEffect(() => {
+    ky(API_ENDPOINT)
+      .json()
+      .then(data => {
+        setPosts(data);
+        setLoading(false);
+      });
   }, []);
 
   return (
     <React.Fragment>
-      <Flex alignItems="flex-end" justifyContent="space-between">
-        <Heading fontSize={28} fontWeight="normal">
+      <Box alignItems="flex-end" display="flex" justifyContent="space-between">
+        <Heading fontSize={32} fontWeight="normal">
           Blog
         </Heading>
         <Text
@@ -30,16 +32,16 @@ function Feed() {
         >
           Ver más artículos
         </Text>
-      </Flex>
+      </Box>
 
       {loading ? (
-        <Text fontSize={16} mt={15}>
+        <Text fontSize={16} mt={16}>
           Cargando publicaciones...
         </Text>
       ) : (
         posts.map(post => (
           <Box key={post.url} mt={16}>
-            <Article {...post} />
+            <Article article={post} />
           </Box>
         ))
       )}

@@ -22,16 +22,16 @@
   },
   "homepage": "https://github.com/js-ni/js-ni-medium-posts#readme",
   "dependencies": {
-    "ky": "0.4.1",
-    "rebass": "3.0.0-9"
+    "@nerdify/styled-system-primitives": "0.1.0",
+    "ky": "0.11.0"
   },
   "devDependencies": {
-    "microbundle": "0.7.0"
+    "microbundle": "0.11.0"
   },
   "peerDependencies": {
-    "react": "^16.7.0-alpha.0",
-    "react-dom": "^16.7.0-alpha.0",
-    "styled-components": "^4.0.2"
+    "@emotion/styled": "^10.0.11",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   },
   "publishConfig": {
     "access": "public"
